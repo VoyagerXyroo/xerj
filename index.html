@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Love Letter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:wght@400;700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="min-h-screen flex items-center justify-center p-4 md:p-8">
+        <!-- Animated background bokeh effect -->
+        <div class="fixed inset-0 pointer-events-none overflow-hidden">
+            <div class="bokeh bokeh-1"></div>
+            <div class="bokeh bokeh-2"></div>
+            <div class="bokeh bokeh-3"></div>
+        </div>
+
+        <div class="relative z-10 w-full max-w-2xl">
+            <!-- Landing Stage -->
+            <div id="stage-landing" class="stage active">
+                <div class="flex flex-col items-center justify-center space-y-8 md:space-y-12">
+                    <div class="decorative-top">✦ ✦ ✦</div>
+                    <div class="text-center space-y-2">
+                        <h1 class="font-display title">A Love Letter</h1>
+                        <p class="font-body subtitle">For someone special</p>
+                    </div>
+                    <div class="envelope-preview shadow-elegant">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <button onclick="setStage('modal')" class="seal-button group" aria-label="Open letter">
+                                <div class="seal-glow"></div>
+                                <div class="seal-circle">
+                                    <svg class="heart-icon" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                    </svg>
+                                </div>
+                                <div class="seal-border"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="font-body message-text">A special message awaits you</p>
+                    <div class="decorative-bottom">✦</div>
+                </div>
+            </div>
+
+            <!-- Envelope Stage -->
+            <div id="stage-envelope" class="stage">
+                <div class="flex flex-col items-center justify-center">
+                    <div class="envelope-container shadow-elegant">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <button onclick="setStage('modal')" class="seal-button large group" aria-label="Open letter">
+                                <div class="seal-glow"></div>
+                                <div class="seal-circle">
+                                    <svg class="heart-icon" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                    </svg>
+                                </div>
+                                <div class="seal-border"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="mt-8 text-center font-accent instruction-text">Click the seal to break it</p>
+                    <button onclick="setStage('landing')" class="mt-8 back-button">Back</button>
+                </div>
+            </div>
+
+            <!-- Modal Stage -->
+            <div id="stage-modal" class="stage">
+                <div class="fixed inset-0 bg-black-40 flex items-center justify-center p-4 z-50">
+                    <div class="modal-content shadow-elegant">
+                        <div class="modal-overlay"></div>
+                        <div class="relative z-10 flex flex-col items-center text-center space-y-6">
+                            <button onclick="setStage('envelope')" class="close-button" aria-label="Close">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                            <h2 class="font-display modal-title">What will you do?</h2>
+                            <p class="font-body modal-subtitle">Choose your path with this precious letter</p>
+                            <div class="decorative-star">✦</div>
+                            <div class="flex flex-col gap-4 w-full pt-4">
+                                <button onclick="setStage('letter')" class="btn-primary">Open it</button>
+                                <button onclick="setStage('burned')" class="btn-outline">Burn it</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Letter Stage -->
+            <div id="stage-letter" class="stage">
+                <div class="animate-slide-up">
+                    <div class="letter-container shadow-elegant texture-paper">
+                        <div class="letter-overlay"></div>
+                        <div class="relative z-10 flex flex-col items-center text-center space-y-6">
+                            <div class="decorative-star">✦</div>
+                            <p class="font-noble greeting">My Dearest,</p>
+                            <div class="space-y-5 text-content">
+                                <p class="font-body">In a world of countless moments, you are the one I choose to cherish. Your smile brightens my darkest days, and your presence makes everything feel possible. Every laugh we share, every glance we exchange, every moment together is a treasure I hold close to my heart.</p>
+                                <p class="font-body">You are my inspiration, my comfort, and my greatest joy. Thank you for being the extraordinary person you are, for loving me unconditionally, and for making my life infinitely more beautiful.</p>
+                                <p class="font-body">On this day of love, I want you to know that my heart is entirely yours, now and always.</p>
+                            </div>
+                            <p class="font-body closing">With all my love,</p>
+                            <p class="font-noble signature">Forever Yours</p>
+                            <div class="flex items-center justify-center gap-2 pt-2">
+                                <div class="dot"></div>
+                                <svg class="w-4 h-4 gold-heart" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="decorative-line"></div>
+                            <p class="font-accent with-love">✦ WITH LOVE ✦</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-center mt-8">
+                        <button onclick="setStage('envelope')" class="btn-primary">Seal the Letter</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Burned Stage -->
+            <div id="stage-burned" class="stage">
+                <div class="animate-slide-up flex flex-col items-center justify-center space-y-8">
+                    <div class="burned-visual shadow-elegant">
+                        <div class="burned-bg"></div>
+                        <div class="ash-particles">
+                            <!-- <div class="ash ash-1"></div>
+                            <div class="ash ash-2"></div>
+                            <div class="ash ash-3"></div> -->
+                        </div>
+                        <div class="relative z-10 text-center space-y-4">
+                            <p class="font-display burned-title">Ashes.......</p>
+                            <p class="font-body burned-subtitle">The letter has been burned with all the love.</p>
+                        </div>
+                    </div>
+                    <div class="text-center space-y-4 max-w-md">
+                        <p class="font-body burned-message">Sometimes, the most powerful letters are the ones that exist only in our hearts.</p>
+                        <p class="font-accent memory-text">The memory remains eternal.</p>
+                    </div>
+                    <button onclick="setStage('landing')" class="btn-primary">Return to Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setStage(stageId) {
+            // Hide all stages
+            document.querySelectorAll('.stage').forEach(stage => {
+                stage.classList.remove('active');
+            });
+            // Show target stage
+            const targetStage = document.getElementById('stage-' + stageId);
+            if (targetStage) {
+                targetStage.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
