@@ -66,6 +66,12 @@ body {
     font-weight: 700;
     line-height: 1;
 }
+.isi {
+  font-family: "Oooh Baby", cursive;
+  font-weight: 400;
+  font-size:x-large;
+  font-style:normal;
+}
 
 .title { font-size: 3rem; color: var(--color-maroon); }
 .subtitle { font-size: 1.25rem; color: var(--color-maroon); }
@@ -221,6 +227,11 @@ body {
 .modal-title { font-size: 1.875rem; color: var(--color-maroon); padding-top: 1rem; }
 .modal-subtitle { font-size: 0.875rem; color: var(--color-maroon); }
 
+/* Announcement */
+.announcement-title { font-size: 2.25rem; color: var(--color-maroon); padding-top: 1rem; }
+.announcement-subtitle { font-size: 1rem; color: var(--color-maroon); margin-top: 0.5rem; }
+.announcement-question { font-size: 0.95rem; color: var(--color-maroon); font-style: italic; }
+
 /* Buttons */
 .btn-primary {
     width: 100%;
@@ -283,7 +294,7 @@ body {
 @media (min-width: 768px) {
     .letter-container { padding: 4rem; }
 }
-.letter-overlay {
+/* .letter-overlay {
     position: absolute;
     inset: 0;
     border-radius: 0.75rem;
@@ -298,7 +309,7 @@ body {
         rgba(139, 58, 58, 0.03) 2px,
         rgba(139, 58, 58, 0.03) 4px
       );
-}
+} */
 .greeting { color: var(--color-gold); }
 .text-content { font-size: 0.875rem; color: var(--color-text-dark); }
 @media (min-width: 768px) {
@@ -309,7 +320,75 @@ body {
 .gold-heart { color: var(--color-gold); }
 .dot { width: 0.25rem; height: 0.25rem; border-radius: 50%; background-color: var(--color-gold); }
 .decorative-line { width: 4rem; height: 1px; background-color: var(--color-gold); margin-top: 1.5rem; }
-.with-love { font-size: 0.75rem; letter-spacing: 0.2em; color: var(--color-gold); padding-top: 0.5rem; }
+.with-love { font-size: 0.75rem; letter-spacing: 0.2em; color: var(--color-maroon-dark); padding-top: 0.5rem; }
+
+/* Coupons */
+.coupons-container {
+    width: 100%;
+    max-width: 28rem;
+    margin: 0 auto;
+    border-radius: 0.75rem;
+    padding: 3rem 2rem;
+    position: relative;
+    background-color: var(--color-cream);
+    background-image: url('images/letter-texture.png');
+    background-size: cover;
+    background-position: center;
+}
+@media (min-width: 768px) {
+    .coupons-container { padding: 4rem; }
+}
+.coupons-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+    background-color: rgba(245, 230, 211, 0.93);
+}
+.coupons-title { font-size: 1.875rem; color: var(--color-maroon); padding-top: 1rem; }
+
+.coupon-card {
+    width: 100%;
+    border: 2px dashed var(--color-maroon);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+.coupon-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(139, 58, 58, 0.15);
+}
+.coupon-header {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--color-maroon);
+    margin-bottom: 0.75rem;
+}
+.coupon-body {
+    margin-bottom: 0.75rem;
+}
+.coupon-text {
+    font-family: 'Lora', serif;
+    font-size: 0.875rem;
+    color: var(--color-text-dark);
+    margin-bottom: 0.25rem;
+}
+.coupon-terms {
+    font-family: 'Lora', serif;
+    font-size: 0.75rem;
+    color: var(--color-gold);
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+.coupon-footer {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    color: var(--color-maroon);
+    border-top: 1px solid var(--color-gold);
+    padding-top: 0.75rem;
+    letter-spacing: 0.1em;
+}
 
 /* Burned View */
 .burned-visual {

@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:wght@400;700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&family=Satisfy&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div id="app" class="min-h-screen flex items-center justify-center p-4 md:p-8">
@@ -81,8 +83,76 @@
                             <p class="font-body modal-subtitle">Choose your path with this precious letter</p>
                             <div class="decorative-star">✦</div>
                             <div class="flex flex-col gap-4 w-full pt-4">
-                                <button onclick="setStage('letter')" class="btn-primary">Open it</button>
+                                <button onclick="setStage('announcement')" class="btn-primary">Open it</button>
+                                <!-- <button onclick="setStage('coupons')" class="btn-primary">View Coupons</button> -->
                                 <button onclick="setStage('burned')" class="btn-outline">Burn it</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Announcement Stage -->
+            <div id="stage-announcement" class="stage">
+                <div class="fixed inset-0 bg-black-40 flex items-center justify-center p-4 z-50">
+                    <div class="modal-content shadow-elegant">
+                        <div class="modal-overlay"></div>
+                        <div class="relative z-10 flex flex-col items-center text-center space-y-6">
+                            <button onclick="setStage('modal')" class="close-button" aria-label="Close">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                            <div class="decorative-star">✦ ✦ ✦</div>
+                            <p class="font-display announcement-title">Wow!</p>
+                            <p class="font-body announcement-subtitle">You got coupon too, not only a letter.</p>
+                            <p class="font-body announcement-question">Which one you want to see first?</p>
+                            <div class="flex flex-col gap-4 w-full pt-4">
+                                <button onclick="setStage('letter')" class="btn-primary">Letter</button>
+                                <button onclick="setStage('coupons')" class="btn-primary">Coupon</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coupons Stage -->
+            <div id="stage-coupons" class="stage">
+                <div class="animate-slide-up">
+                    <div class="coupons-container shadow-elegant">
+                        <div class="coupons-overlay"></div>
+                        <div class="relative z-10 flex flex-col items-center text-center space-y-6">
+                            <button onclick="setStage('envelope')" class="close-button" aria-label="Close">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                            <div class="decorative-star">✦ SPECIAL OFFERS ✦</div>
+                            <p class="font-display coupons-title">Exclusive Coupons</p>
+                            
+                            <!-- Movie Coupon -->
+                            <div class="coupon-card">
+                                <div class="coupon-header">🎬 Any Movies Anytime</div>
+                                <div class="coupon-body">
+                                    <p class="coupon-text">Watch any movie, anytime</p>
+                                    <p class="coupon-terms">Non-Rejectable Offer</p>
+                                </div>
+                                <div class="coupon-footer">Valid Forever</div>
+                            </div>
+                            
+                            <!-- Ask Anything Coupons -->
+                            <div class="coupon-card">
+                                <div class="coupon-header">❓ Ask Anything</div>
+                                <div class="coupon-body">
+                                    <p class="coupon-text">Questions</p>
+                                    <p class="coupon-terms">Ask me anything, [i need to answer the question]</p>
+                                </div>
+                                <div class="coupon-footer">5x Coupons Available</div>
+                            </div>
+                            
+                            <div class="flex flex-col gap-4 w-full pt-4">
+                                <button onclick="setStage('letter')" class="btn-primary">Read the Letter</button>
+                                <button onclick="setStage('announcement')" class="btn-outline">Back</button>
                             </div>
                         </div>
                     </div>
@@ -98,9 +168,9 @@
                             <div class="decorative-star">✦♥✦</div>
                             <p class="font-noble greeting">Nesia,</p>
                             <div class="space-y-5 text-content">
-                                <p class="font-body">In an infinite number of moments, you are the one I want to hold dear to my heart. Your smile lights up even my darkest times, and being with you makes me feel like everything is possible. Every time we share a laugh together, every look we share with each other, every moment spent with you. it's precious to me.</p>
-                                <p class="font-body">You are my inspiration, my comfort, and my greatest joy. Thank you for being the extraordinary person you are, for loving me unconditionally, and for making my life infinitely more beautiful.</p>
-                                <p class="font-body">On this day of love, I want you to know that my heart is entirely yours, now and always.</p>
+                                <p class="font-body isi">In an infinite number of moments, you are the one I want to hold dear to my heart. Your smile lights up even my darkest times, and being with you makes me feel like everything is possible. Every time we share a laugh together, every look we share with each other, every moment spent with you. it's precious to me.</p>
+                                <p class="font-body isi">You are my inspiration, my comfort, and my greatest joy. Thank you for being the extraordinary person you are, for loving me unconditionally, and for making my life infinitely more beautiful.</p>
+                                <p class="font-body isi">On this day of love, I want you to know that my heart is entirely yours, now and always.</p>
                             </div>
                             <p class="font-body closing">With all my love,</p>
                             <p class="font-noble signature">Forever Yours</p>
@@ -116,7 +186,7 @@
                         </div>
                     </div>
                     <div class="flex justify-center mt-8">
-                        <button onclick="setStage('envelope')" class="btn-primary">Seal the Letter</button>
+                         <button onclick="setStage('envelope')" class="btn-primary">Seal the letter!</button>
                     </div>
                 </div>
             </div>
@@ -140,7 +210,10 @@
                         <p class="font-body burned-message">Sometimes, the most powerful letters are the ones that exist only in our hearts.</p>
                         <p class="font-accent memory-text">The memory remains eternal.</p>
                     </div>
-                    <button onclick="setStage('landing')" class="btn-primary">Return to Start</button>
+                    <div class="flex flex-col gap-4 w-full max-w-md">
+                        <!-- <button onclick="setStage('modal')" class="btn-primary">Back to Envelope</button> -->
+                        <!-- <button onclick="setStage('landing')" class="btn-outline">There's a moment you can rewind.</button> -->
+                    </div>
                 </div>
             </div>
         </div>
